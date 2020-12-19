@@ -44,7 +44,7 @@ if (APPLE)
     #    set_property(TARGET OpenImageIO PROPERTY SOVERSION "32.1.2.0")
 endif()
 
-add_custom_command(
-        TARGET php_runpy
-        POST_BUILD
-        COMMAND ls -lah && env)
+#add_custom_command(
+#        TARGET php_runpy
+#        POST_BUILD
+#        COMMAND ls -lah && env)

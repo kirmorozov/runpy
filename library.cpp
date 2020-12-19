@@ -118,10 +118,10 @@ PHPCPP_EXPORT void *get_module() {
 
     // @todo    add your own functions, classes, namespaces to the extension
 //    // description of the class so that PHP knows which methods are accessible
-    Php::Class <PyClass> counter("PyClass");
+    Php::Class <PyClass> pyclass("PyClass");
 
 
-    counter.method<&PyClass::__construct>("__construct", {
+    pyclass.method<&PyClass::__construct>("__construct", {
             Php::ByVal("access_key", Php::Type::String, true),
             Php::ByVal("module", Php::Type::String, true),
             Php::ByVal("initScript", Php::Type::String, false)
@@ -145,7 +145,7 @@ PHPCPP_EXPORT void *get_module() {
     });
 
     //    // add the class to the extension
-    extension.add(std::move(counter));
+    extension.add(std::move(pyclass));
 
     // return the extension
     return extension;
